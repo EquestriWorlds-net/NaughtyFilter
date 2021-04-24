@@ -6,7 +6,7 @@ description: Filter naughty words
 api-version: 1.13
 
 author: StarTux
-website: https://github.com/StarTux/NaughtyFilter
+website: https://github.com/EquestriWorlds-net/NaughtyFilter
 
 depend: []
 softdepend: []
