@@ -20,6 +20,7 @@ public final class EventListener implements Listener {
 
     @EventHandler(priority = EventPriority.LOWEST)
     void onPlayerCommandPreprocess(PlayerCommandPreprocessEvent event) {
+        if (event.getPlayer().hasPermission("naughtyfilter.override")) return;
         String[] tokens = event.getMessage().split(" ", 2);
         if (tokens.length != 2) return;
         String cmd = tokens[0];
@@ -41,6 +42,7 @@ public final class EventListener implements Listener {
     @EventHandler(priority = EventPriority.LOWEST)
     void onAsyncPlayerChat(AsyncPlayerChatEvent event) {
         if (!plugin.filterChat) return;
+        if (event.getPlayer().hasPermission("naughtyfilter.override")) return;
         String message = event.getMessage();
         String lower = message.toLowerCase();
         StringBuilder sb = null;
