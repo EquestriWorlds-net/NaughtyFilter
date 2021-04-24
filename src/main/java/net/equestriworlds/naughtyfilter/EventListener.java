@@ -1,4 +1,4 @@
-package com.equestriworlds.naughtyfilter;
+package net.equestriworlds.naughtyfilter;
 
 import lombok.RequiredArgsConstructor;
 import org.bukkit.Bukkit;

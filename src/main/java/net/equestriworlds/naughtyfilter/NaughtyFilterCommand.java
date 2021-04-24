@@ -1,4 +1,4 @@
-package com.equestriworlds.naughtyfilter;
+package net.equestriworlds.naughtyfilter;
 
 import java.util.Collections;
 import java.util.List;

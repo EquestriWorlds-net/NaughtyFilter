@@ -1,4 +1,4 @@
-package com.equestriworlds.naughtyfilter;
+package net.equestriworlds.naughtyfilter;
 
 import java.io.BufferedReader;
 import java.io.File;

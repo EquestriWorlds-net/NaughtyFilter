@@ -1,4 +1,4 @@
-main: com.equestriworlds.naughtyfilter.NaughtyFilterPlugin
+main: net.equestriworlds.naughtyfilter.NaughtyFilterPlugin
 
 name: NaughtyFilter
 version: 0.1
