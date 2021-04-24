@@ -1,0 +1,31 @@
+main: com.equestriworlds.naughtyfilter.NaughtyFilterPlugin
+
+name: NaughtyFilter
+version: 0.1
+description: Filter naughty words
+api-version: 1.13
+
+author: StarTux
+website: https://github.com/StarTux/NaughtyFilter
+
+depend: []
+softdepend: []
+
+commands:
+
+  naughtyfilter:
+    aliases: []
+    description: NaughtyFilter Command
+    permission: naughtyfilter.naughtyfilter
+    usage: |-
+      /naughtyfilter reload - Reload configs
+
+permissions:
+
+  naughtyfilter.naughtyfilter:
+    description: Use /naughtyfilter
+    default: op
+
+  naughtyfilter.override:
+    description: Override the filter
+    default: op

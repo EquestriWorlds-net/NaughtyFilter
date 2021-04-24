@@ -1,0 +1,4 @@
+# List of commands to filter. Must all be lowercase!
+FilterCommands: [nick, nickname]
+FilterChat: true
+Feedback: '&cNaughty words are not allowed!'
