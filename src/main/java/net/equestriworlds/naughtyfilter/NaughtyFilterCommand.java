@@ -24,7 +24,7 @@ public final class NaughtyFilterCommand implements TabExecutor {
         case "reload": {
             if (args.length != 1) return false;
             plugin.loadConfiguration();
-            plugin.loadNaughtyList();
+            plugin.loadWordLists();
             sender.sendMessage("Configuration and word list reloaded");
             return true;
         }

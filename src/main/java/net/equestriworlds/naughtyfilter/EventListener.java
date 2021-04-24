@@ -46,7 +46,7 @@ public final class EventListener implements Listener {
         String message = event.getMessage();
         String lower = message.toLowerCase();
         StringBuilder sb = null;
-        for (String naughty : plugin.naughtyList) {
+        for (String naughty : plugin.chatList) {
             int index = lower.indexOf(naughty.toLowerCase());
             if (index < 0) continue;
             if (sb == null) sb = new StringBuilder(message);

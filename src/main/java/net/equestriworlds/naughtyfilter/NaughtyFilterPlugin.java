@@ -13,6 +13,7 @@ public final class NaughtyFilterPlugin extends JavaPlugin {
     protected NaughtyFilterCommand naughtyfilterCommand = new NaughtyFilterCommand(this);
     protected EventListener eventListener = new EventListener(this);
     protected List<String> naughtyList;
+    protected List<String> chatList;
     protected List<String> filterCommands;
     protected boolean filterChat;
     protected String feedback;
@@ -23,7 +24,7 @@ public final class NaughtyFilterPlugin extends JavaPlugin {
         loadConfiguration();
         naughtyfilterCommand.enable();
         eventListener.enable();
-        loadNaughtyList();
+        loadWordLists();
     }
 
     @Override
@@ -37,10 +38,15 @@ public final class NaughtyFilterPlugin extends JavaPlugin {
         feedback = getConfig().getString("Feedback");
     }
 
-    public void loadNaughtyList() {
-        File file = new File(getDataFolder(), "naughty.txt");
+    public void loadWordLists() {
+        naughtyList = loadList("naughty.txt");
+        chatList = loadList("chat.txt");
+    }
+
+    private List<String> loadList(String filename) {
+        File file = new File(getDataFolder(), filename);
         if (!file.exists()) {
-            saveResource("naughty.txt", false);
+            saveResource(filename, false);
         }
         List<String> list = new ArrayList<>();
         try (BufferedReader reader = new BufferedReader(new FileReader(file))) {
@@ -56,7 +62,7 @@ public final class NaughtyFilterPlugin extends JavaPlugin {
         }
         // Longer words first
         Collections.sort(list, (b, a) -> Integer.compare(a.length(), b.length()));
-        naughtyList = list;
-        getLogger().info(naughtyList.size() + " naughty words loaded");
+        getLogger().info(filename + ": " + list.size() + " naughty words loaded");
+        return list;
     }
 }
